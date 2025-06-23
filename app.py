@@ -133,7 +133,7 @@ if __name__ == "__main__":
         demo.load(update_status, outputs=model_status)
 
     demo.launch(
-        server_name="0.0.0.0",  # Allow external access
+        server_name="127.0.0.1",  # Only localhost access
         server_port=7862,
         share=False,  # Set to True for public link
         show_error=True,
