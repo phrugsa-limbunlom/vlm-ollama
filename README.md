@@ -1,5 +1,9 @@
 # vlm-ollama
 
+
+https://github.com/user-attachments/assets/b9f5f504-2090-4795-9b14-4e073441710e
+
+
 # 🚀 Local Vision-Language Model Demo
 
 A powerful, privacy-focused Vision-Language Model (VLM) demo that runs entirely on your local machine using Ollama. Experience AI-powered image understanding and chat capabilities without any API costs or privacy concerns.
@@ -189,7 +193,7 @@ nvcc --version
 
 ### Security Considerations
 - Default configuration does not allow network access (`127.0.0.1`)
-- For external access, use `.0.0.0.0`
+- For external access, use `0.0.0.0`
 - Consider firewall rules for production use
 
 ## 📊 Performance Metrics
