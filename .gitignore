@@ -1,0 +1,4 @@
+.gradio
+.idea
+__pycache__/
+venv/
