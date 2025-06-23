@@ -57,17 +57,27 @@ pip install -r requirements.txt
 
 ### 1. Start Ollama Service
 ```bash
-# Set up flash attention for performance optimization
-set OLLAMA_FLASH_ATTENTION=1 # For Windows
+# Set flash attention and KV cache for performance optimization
+
 export OLLAMA_FLASH_ATTENTION=1 # For Linux
+export OLLAMA_KV_CACHE_TYPE="q8_0"
+echo "Flash Attention: $OLLAMA_FLASH_ATTENTION"
+
 # Start Ollama service
 ollama serve
+
+# Verify that  'OLLAMA_FLASH_ATTENTION:true' and OLLAMA_KV_CACHE_TYPE:q8_0 are set after the command
 ```
 
 ### 2. Pull a Vision Model
 ```bash
-# Example: Pull LLaVA model (adjust based on your preference)
+# See available models : https://ollama.com/search
+
+# Example: Pull Gemma3 model (adjust based on your preference)
 ollama pull gemma3:4b
+
+# See model information
+ollama show --verbose gemma3:4b 
 ```
 
 ### 3. Run the Demo (Specify your own model)
