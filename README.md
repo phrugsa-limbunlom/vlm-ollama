@@ -1,12 +1,8 @@
-# vlm-ollama
-
+<h1 align="center"> 🚀 Local Vision-Language Model </h1>
 
 https://github.com/user-attachments/assets/b9f5f504-2090-4795-9b14-4e073441710e
 
-
-# 🚀 Local Vision-Language Model Demo
-
-A powerful, privacy-focused Vision-Language Model (VLM) demo that runs entirely on your local machine using Ollama. Experience AI-powered image understanding and chat capabilities without any API costs or privacy concerns.
+A powerful, privacy-focused Vision-Language Model (VLM) running entirely on a local machine using Ollama, enabling a multimodal model for image understanding and chat capabilities without any API costs or privacy concerns.
 
 ## ✨ Features
 
@@ -90,7 +86,7 @@ python main.py --model-name gemma3:4b
 ```
 
 ### 4. Access the Interface
-Open your browser and navigate to:
+Open a browser and navigate to:
 ```
 http://localhost:7862
 ```
@@ -114,7 +110,7 @@ local-vlm-demo/
 ## 🔧 Configuration
 
 ### Model Selection
-The demo supports any Ollama-compatible vision model. Popular options:
+The demo supports any Ollama-compatible vision model, such as:
 
 - **LLaVA 7B**: `llava:7b` (Recommended for RTX 3050)
 - **LLaVA 13B**: `llava:13b` (Requires more VRAM)
@@ -133,7 +129,7 @@ Adjust these parameters in the interface:
 
 ### Network Configuration
 By default, the demo runs on:
-- **Host**: `127.0.0.1` (accessible from other devices on network)
+- **Host**: `127.0.0.1` (accessible from other devices on the network)
 - **Port**: `7862`
 - **Ollama URL**: `http://localhost:11434`
 
@@ -169,7 +165,7 @@ nvcc --version
 
 #### 4. Out of Memory Errors
 - Use smaller models (e.g., `gemma2:2b`)
-- Reduce max_tokens parameter
+- Reduce the max_tokens parameter
 - Close other GPU-intensive applications
 
 ### Performance Optimization
