@@ -29,9 +29,9 @@ class OllamaVLM:
                     print(f"Model {self.model_name} is ready")
                     self.model_ready = True
             else:
-                print("❌ Ollama is not running. Please start Ollama first.")
+                print("Ollama is not running. Please start Ollama first.")
         except Exception as e:
-            print(f"❌ Error connecting to Ollama: {e}")
+            print(f"Error connecting to Ollama: {e}")
 
     def pull_model(self):
         """Pull the model if not available"""
@@ -48,20 +48,20 @@ class OllamaVLM:
                     if line:
                         data = json.loads(line)
                         if "status" in data:
-                            print(f"📥 {data['status']}")
+                            print(f"{data['status']}")
                         if data.get("status") == "success":
                             self.model_ready = True
                             break
         except Exception as e:
-            print(f"❌ Error pulling model: {e}")
+            print(f"Error pulling model: {e}")
 
     def generate_response(self, prompt, image, temperature, max_tokens, history=None):
         """Generate response using Ollama with conversation history"""
         if not self.model_ready:
-            return "❌ Model not ready. Please check Ollama setup.", None
+            return "Model not ready. Please check Ollama setup.", None
 
         if not prompt.strip():
-            return "❌ Please enter a prompt.", None
+            return "Please enter a prompt.", None
 
         # Build conversation context from history
         full_prompt = Utils.build_conversation_prompt(prompt, history)
@@ -88,7 +88,7 @@ class OllamaVLM:
                 img_base64 = base64.b64encode(img_buffer.getvalue()).decode('utf-8')
                 payload["images"] = [img_base64]
             except Exception as e:
-                return f"❌ Error processing image: {e}", None
+                return f"Error processing image: {e}", None
 
         try:
             start_time = time.time()
@@ -120,5 +120,5 @@ class OllamaVLM:
                 return f"Internal Server Error", None
 
         except requests.exceptions.Timeout:
-            return "❌ Request timed out. Try reducing max_tokens or simplifying the prompt.", None
+            return "Request timed out. Try reducing max_tokens or simplifying the prompt.", None
 
